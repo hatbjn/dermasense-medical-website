@@ -51,15 +51,32 @@ export function HeroSection() {
               </span>
             </motion.div>
 
-            <motion.h1
+            {/* LOGO */}
+            <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3 }}
-              className="text-5xl sm:text-6xl lg:text-7xl font-bold tracking-tight mb-6"
+              className="mb-8 flex justify-center lg:justify-center"
             >
-              <span className="text-derma-blue">DERMA</span>
-              <span className="text-gradient">SENSE</span>
-            </motion.h1>
+              <Image
+                src="/logo-transparent.png"
+                alt="DERMASENSE Logo"
+                width={300}
+                height={280}
+                className="
+                  w-[300px]
+                  sm:w-[250px]
+                  lg:w-[300px]
+                  h-auto
+                  object-contain
+                  mix-blend-multiply
+                  opacity-95
+                  brightness-105
+                  contrast-105
+                "
+                priority
+              />
+            </motion.div>
 
             <motion.p
               initial={{ opacity: 0, y: 20 }}
