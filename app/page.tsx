@@ -21,7 +21,7 @@ export default function Home() {
       <DashboardSection />
       <AdvantagesSection />
       <TechnologiesSection />
-      <TeamSection />
+      
       <ContactSection />
       <Footer />
     </main>

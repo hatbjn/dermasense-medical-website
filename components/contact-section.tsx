@@ -95,7 +95,7 @@ export function ContactSection() {
                 </div>
                 <div>
                   <div className="text-sm text-muted-foreground">Telephone</div>
-                  <div className="font-medium text-foreground">+33 1 23 45 67 89</div>
+                  <div className="font-medium text-foreground">+212 6 23 45 67 89</div>
                 </div>
               </div>
 

@@ -144,8 +144,8 @@ export function HeroSection() {
               
               <div className="relative glass rounded-3xl p-4 overflow-hidden">
                 <Image
-                  src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202026-05-16%20at%2012.18.52-PyCwWfJmcGueTbSdJqkWWolt0mXTHM.jpeg"
-                  alt="Stand DERMASENSE - Matelas Intelligent pour la prevention des escarres"
+                  src="/dermasense.png"
+                  alt="DERMASENSE"
                   width={600}
                   height={450}
                   className="rounded-2xl w-full h-auto"

@@ -13,7 +13,7 @@ const navLinks = [
   { href: "#surveillance", label: "Surveillance" },
   { href: "#avantages", label: "Avantages" },
   { href: "#technologies", label: "Technologies" },
-  { href: "#equipe", label: "Equipe" },
+  
   { href: "#contact", label: "Contact" },
 ]
 
