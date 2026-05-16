@@ -1,0 +1,168 @@
+@import 'tailwindcss';
+@import 'tw-animate-css';
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  /* DERMASENSE Brand Theme - Light Mode */
+  --background: oklch(0.99 0.002 240);
+  --foreground: oklch(0.15 0.03 240);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.15 0.03 240);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.15 0.03 240);
+  --primary: oklch(0.35 0.12 240);
+  --primary-foreground: oklch(0.99 0 0);
+  --secondary: oklch(0.96 0.01 200);
+  --secondary-foreground: oklch(0.25 0.03 240);
+  --muted: oklch(0.95 0.01 200);
+  --muted-foreground: oklch(0.45 0.02 240);
+  --accent: oklch(0.55 0.15 175);
+  --accent-foreground: oklch(0.99 0 0);
+  --destructive: oklch(0.55 0.22 25);
+  --destructive-foreground: oklch(0.99 0 0);
+  --border: oklch(0.92 0.01 200);
+  --input: oklch(0.92 0.01 200);
+  --ring: oklch(0.35 0.12 240);
+  --chart-1: oklch(0.35 0.12 240);
+  --chart-2: oklch(0.55 0.15 175);
+  --chart-3: oklch(0.55 0.18 145);
+  --chart-4: oklch(0.65 0.2 140);
+  --chart-5: oklch(0.7 0.18 30);
+  --radius: 0.75rem;
+  
+  /* DERMASENSE Custom colors */
+  --derma-blue: oklch(0.35 0.12 240);
+  --derma-teal: oklch(0.55 0.15 175);
+  --derma-green: oklch(0.55 0.18 145);
+  --success: oklch(0.55 0.18 145);
+  --warning: oklch(0.75 0.18 70);
+  --glow: oklch(0.55 0.15 175 / 0.2);
+}
+
+@theme inline {
+  --font-sans: 'Geist', 'Geist Fallback', system-ui, sans-serif;
+  --font-mono: 'Geist Mono', 'Geist Mono Fallback', monospace;
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-derma-blue: var(--derma-blue);
+  --color-derma-teal: var(--derma-teal);
+  --color-derma-green: var(--derma-green);
+  --color-success: var(--success);
+  --color-warning: var(--warning);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+/* Custom utilities */
+@layer utilities {
+  .glass {
+    @apply bg-card/80 backdrop-blur-xl border border-border shadow-lg shadow-derma-teal/5;
+  }
+  
+  .glass-strong {
+    @apply bg-card/95 backdrop-blur-2xl border border-border shadow-xl shadow-derma-teal/10;
+  }
+  
+  .glow {
+    box-shadow: 0 0 40px var(--glow), 0 0 80px var(--glow);
+  }
+  
+  .glow-sm {
+    box-shadow: 0 0 20px var(--glow);
+  }
+  
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-derma-teal to-derma-green;
+  }
+  
+  .text-gradient-full {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-derma-blue via-derma-teal to-derma-green;
+  }
+  
+  .bg-gradient-brand {
+    @apply bg-gradient-to-r from-derma-blue via-derma-teal to-derma-green;
+  }
+  
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+  
+  .animate-pulse-slow {
+    animation: pulse 4s ease-in-out infinite;
+  }
+  
+  .animate-glow {
+    animation: glow-pulse 3s ease-in-out infinite;
+  }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+}
+
+@keyframes glow-pulse {
+  0%, 100% { 
+    box-shadow: 0 0 20px var(--glow), 0 0 40px var(--glow);
+    opacity: 1;
+  }
+  50% { 
+    box-shadow: 0 0 40px var(--glow), 0 0 80px var(--glow);
+    opacity: 0.8;
+  }
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--background);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--muted-foreground);
+}
